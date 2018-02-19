@@ -70,11 +70,6 @@
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.mult = exports.add = exports.AdvMath = undefined;
-
 var _basic = __webpack_require__(1);
 
 var _advanced = __webpack_require__(2);
@@ -89,9 +84,9 @@ console.log("mult:" + (0, _basic.mult)(2, 3));
 console.log("cos:" + AdvMath.cos(1));
 console.log("sin:" + AdvMath.sin(1));
 
-exports.AdvMath = AdvMath;
-exports.add = _basic.sum;
-exports.mult = _basic.mult;
+window.MathFns = {
+  add: _basic.sum, mult: _basic.mult, cos: AdvMath.cos, sin: AdvMath.cos
+};
 
 /***/ }),
 /* 1 */
