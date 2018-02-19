@@ -1,0 +1,34 @@
+1) Install node.js https://nodejs.org
+2) npm init
+3) npm install babel-loader babel-core babel-preset-env webpack --save-dev
+4) add babel: babel task to package.json
+5) add webpack: webpack task to package.json
+6) Add webpack.config.js
+7) copy this content to webpack.config.js:
+
+var path = require('path');
+var webpack = require('webpack');
+
+module.exports = {
+    entry: './app.js',
+    output: { path: __dirname, filename: 'bundle.js'},
+    module: {
+        loaders: [
+            {
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['env']
+                }
+            }
+        ]
+    }
+};
+
+8) Create app.js in the root directory with this content:
+    console.log("Hello world!");
+
+9) Now if you run npm run webpack it creates a bundle.js
+
+
+
