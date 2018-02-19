@@ -6,3 +6,5 @@ console.log("mult:"+mult(2,3));
 
 console.log("cos:"+AdvMath.cos(1));
 console.log("sin:"+AdvMath.sin(1));
+
+export {AdvMath, add, mult}
